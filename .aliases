@@ -1,0 +1,78 @@
+alias m='/usr/local/bin/subl'
+alias l='ls -Glha'
+alias lsd='ls -l | grep "^d"'
+alias hosts='$EDITOR /etc/hosts'
+alias profile='$EDITOR ~/.zshrc'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias h='history | tail -20'
+alias psme='ps -U `whoami`'
+alias psa='ps -A'
+alias rebash='. ~/.zshrc'
+alias cls='clear'
+alias count='ls -1 | wc -l'
+alias dj='django-admin.py $*'
+alias py='python'
+alias pyr='python $*'
+alias fn='find . -name'
+alias fnr='find / -name'
+alias tar='tar --use-compress-program=pigz'
+
+
+alias jumpssh='ssh -A -t jumphost-001.sjc1.yammer.com ssh -A $@'
+
+# works: ssh -A -t jumphost-001.sjc1.yammer.com ssh pingid-001
+#alias md='mkdir'
+
+alias flush="dscacheutil -flushcache"
+alias fs="stat -f \"%z bytes\""
+alias server="open http://localhost:8080/ && python -m SimpleHTTPServer 8080"
+
+# List only directories
+alias lsd='ls -l | grep "^d"'
+
+# Servers
+alias mystart='mysql.server start'
+alias mystop='mysql.server stop'
+
+alias mongstart='sudo mongod run --config /usr/local/Cellar/mongodb/1.6.5-x86_64/mongod.conf'
+
+# Remote Servers
+alias ec2root='ssh -i ~/.ssh/awsbrianlyttle.pem ubuntu@ec2.sourcefoundry.co.uk'
+alias ec2='ssh -i ~/.ssh/brianlyttle.pem ec2.sourcefoundry.co.uk'
+alias aragorn='ssh -i  ~/.ssh/brianlyttle.pem 192.168.0.101'
+alias ec2sg='ssh -l sgray -i ~/.ssh/sg_dsa ec2.sourcefoundry.co.uk'
+alias ec2sgtunnel='ssh -i ~/.ssh/sg_dsa -D 8080 -f -C -q -N sgray@ec2.sourcefoundry.co.uk'
+
+alias yamaws='ssh -v -i ~/.ssh/blyttle-singapore.pem -L3389:10.0.1.125:3389 ec2-user@54.251.129.23 -N'
+alias yampinglogs='ssh -A -t jumphost-001.sjc1.yammer.com ssh pingid-001'
+
+alias linode='ssh brianly@zoilus.sourcefoundry.co.uk'
+alias linoderoot='ssh -i ~/.ssh/root_rsa root@zoilus.sourcefoundry.co.uk'
+alias artemis='ssh brianly@192.168.132.135'
+alias spdev='ssh brianly@71.224.195.221 -p 24601'
+alias spdevadmin='ssh brian@71.224.195.221 -p 24601'
+
+alias tunnel-spdev='ssh -v -p 24601 -L3389:192.168.0.145:3389 brianly@71.224.195.221 -N'
+alias tunnel-spdevadmin='ssh -v -p 24601 -L3390:192.168.0.145:3389 brian@71.224.195.221 -N'
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en1"
+alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
+
+# OS X has no `md5sum`, so use `md5` as a fallback
+#type -t md5sum > /dev/null || alias md5sum="md5"
+
+# Empty the Trash on all mounted volumes and the main HDD
+# Also, clear Apple’s System Logs to improve shell startup speed
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+
+# URL-encode strings
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+# Trim new lines and copy to clipboard
+alias c="tr -d '\n' | pbcopy"

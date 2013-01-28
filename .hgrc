@@ -1,0 +1,6 @@
+[ui]
+username = Brian Lyttle <hg@killaloo.org>
+
+[extensions]
+hgext.bookmarks =
+mercurial_keyring = 
