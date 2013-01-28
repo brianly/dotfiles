@@ -3,29 +3,12 @@ export LANG=en_US.UTF-8
 export EDITOR='subl'
 
 export PATH="/opt/local/bin:/usr/local/bin:/usr/local/sbin:$PATH"
-#export DJANGOROOT="/Library/Python/2.5/site-packages/"
-#export DJANGOBIN="$DJANGOROOT/django/bin"
-#export GIT_PATH="/usr/local/git/bin"
-#export PATH="$PATH:$DJANGOBIN:$GIT_PATH"
-#export PATH="$PATH:/usr/local/Cellar/icu4c/4.4.1/bin"
-#export PKG_CONFIG_PATH="/usr/X11/lib/pkgconfig"
-
-#export PYTHONPATH="/Users/brianly/dev/python/lib"
-
 export JAVA_HOME="$(/usr/libexec/java_home)"
 export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
 export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
 export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
-
-#export GOROOT=`brew --prefix go`
-#export GOBIN=/usr/local/bin
-#export GOARCH=amd64
-#export GOOS=darwin
 export ARCHFLAGS="-arch x86_64"
-
 export PYTHONSTARTUP="/Users/brianly/dev/github/dotfiles/startup.py"
-
-export WORKON_HOME=~/.virtualenv_workon
 
 # Bash history
 export HISTCONTROL=erasedups

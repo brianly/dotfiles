@@ -17,25 +17,15 @@ alias pyr='python $*'
 alias fn='find . -name'
 alias fnr='find / -name'
 alias tar='tar --use-compress-program=pigz'
-
-
 alias jumpssh='ssh -A -t jumphost-001.sjc1.yammer.com ssh -A $@'
-
-# works: ssh -A -t jumphost-001.sjc1.yammer.com ssh pingid-001
-#alias md='mkdir'
 
 alias flush="dscacheutil -flushcache"
 alias fs="stat -f \"%z bytes\""
 alias server="open http://localhost:8080/ && python -m SimpleHTTPServer 8080"
 
-# List only directories
-alias lsd='ls -l | grep "^d"'
-
 # Servers
 alias mystart='mysql.server start'
 alias mystop='mysql.server stop'
-
-alias mongstart='sudo mongod run --config /usr/local/Cellar/mongodb/1.6.5-x86_64/mongod.conf'
 
 # Remote Servers
 alias ec2root='ssh -i ~/.ssh/awsbrianlyttle.pem ubuntu@ec2.sourcefoundry.co.uk'
@@ -60,9 +50,6 @@ alias tunnel-spdevadmin='ssh -v -p 24601 -L3390:192.168.0.145:3389 brian@71.224.
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en1"
 alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
-
-# OS X has no `md5sum`, so use `md5` as a fallback
-#type -t md5sum > /dev/null || alias md5sum="md5"
 
 # Empty the Trash on all mounted volumes and the main HDD
 # Also, clear Apple’s System Logs to improve shell startup speed
